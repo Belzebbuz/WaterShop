@@ -1,9 +1,9 @@
 # WaterShop
-
+- Разработано в среде VS 2022
 ## Program.cs
 
 - Регистрация сервисов
-- Middleware для обарботки несанкционарованного доступа к admin.html
+- Middleware для обработки несанкционарованного доступа к admin.html
 - Minimal Api для переадресации на index.html и admin.html
 
 ## Controllers/
