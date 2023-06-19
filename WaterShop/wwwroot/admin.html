@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Администрирование</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="admin.js"></script>
+  </head>
+  <body class="p-5">
+    <h1>Панель администрирования</h1>
+    <button class="btn btn-primary" id="btn-create">Добавить</button>
+    <button class="btn btn-primary" id="btn-import">Импорт</button>
+    <div class="container mt-4">
+      <div id="dataContainer" class="row row-cols-4 gap-2"></div>
+    </div>
+
+    <div class="modal fade" id="waterModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog">
+        <form id="waterForm">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">
+                Добавление новой воды
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="">
+                <label for="titleInput" class="form-label"
+                  >Название позиции</label
+                >
+                <input
+                  name="title"
+                  type="text"
+                  class="form-control"
+                  id="titleInput"
+                />
+              </div>
+              <div class="mt-3">
+                <label for="costInput" class="form-label">Стоимость</label>
+                <input
+                  name="cost"
+                  type="number"
+                  min="0"
+                  class="form-control"
+                  id="costInput"
+                />
+              </div>
+              <div class="mt-3">
+                <label for="imageInput" class="form-label"
+                  >Изображение позиции</label
+                >
+                <input
+                  name="image"
+                  class="form-control"
+                  type="file"
+                  accept=".jpg, .png, .jpeg"
+                  id="imageInput"
+                />
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Закрыть
+              </button>
+              <button type="submit" class="btn btn-primary">Сохранить</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="modal fade" id="importModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog">
+        <form id="importForm">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">
+                Импорт из файла
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div>
+                <label for="fileInput" class="form-label">Файл импорта</label>
+                <input
+                  name="file"
+                  class="form-control"
+                  type="file"
+                  accept=".json"
+                  id="fileInput"
+                />
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Закрыть
+              </button>
+              <button type="submit" class="btn btn-primary">Загрузить</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
